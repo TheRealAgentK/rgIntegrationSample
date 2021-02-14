@@ -5,6 +5,7 @@
 	>
 	
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	
 	<application
 		android:allowBackup="true"
@@ -23,6 +24,13 @@
 		</activity>
 		<activity android:name="nz.co.ventegocreative.rgIntegrationSample.detail.DetailActivity" />
 		<activity android:name="nz.co.ventegocreative.rgIntegrationSample.form.FormActivity" />
+
+		<service android:name="com.raygun.raygun4android.services.CrashReportingPostService"
+			android:exported="false"
+			android:permission="android.permission.BIND_JOB_SERVICE"
+			android:process=":crashreportingpostservice" />
+		<meta-data android:name="com.raygun.raygun4android.apikey"
+			android:value="YOUR_API_KEY_HERE" />
 	</application>
 
 </manifest>
