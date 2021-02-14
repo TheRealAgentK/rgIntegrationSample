@@ -11,15 +11,14 @@ class LocalData(private val context: Context) {
 	private val gson: Gson = Gson()
 	
 	fun saveFilm(film: Film) {
-		val filmsGson = getSharedPrefs().getString(KEY_FILMS, "")
-		
+		val filmsGson = getSharedPrefs().getString(KEY_FILMS, "")!!
 		val films = getFilmsListFromJson(filmsGson)
 		films.add(film)
 		
 		getSharedPrefs().edit().putString(KEY_FILMS, gson.toJson(films)).commit()
 	}
 	
-	fun getFilms(): List<Film> = getFilmsListFromJson(getSharedPrefs().getString(KEY_FILMS, ""))
+	fun getFilms(): List<Film> = getFilmsListFromJson(getSharedPrefs().getString(KEY_FILMS, "")!!)
 	
 	private fun getSharedPrefs() = PreferenceManager.getDefaultSharedPreferences(context)
 	

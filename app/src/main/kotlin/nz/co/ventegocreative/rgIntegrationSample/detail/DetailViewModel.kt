@@ -1,6 +1,6 @@
 package nz.co.ventegocreative.rgIntegrationSample.detail
 
-import android.databinding.BindingAdapter
+import androidx.databinding.BindingAdapter
 import android.widget.ImageView
 import com.squareup.picasso.Picasso
 import nz.co.ventegocreative.rgIntegrationSample.R

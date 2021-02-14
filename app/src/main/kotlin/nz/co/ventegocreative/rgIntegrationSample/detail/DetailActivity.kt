@@ -2,9 +2,9 @@ package nz.co.ventegocreative.rgIntegrationSample.detail
 
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import nz.co.ventegocreative.rgIntegrationSample.R
 import nz.co.ventegocreative.rgIntegrationSample.data.models.Film
@@ -23,7 +23,7 @@ class DetailActivity : AppCompatActivity() {
 		
 		supportActionBar?.setDisplayHomeAsUpEnabled(true)
 		
-		film = intent.getParcelableExtra(EXTRA_FILM)
+		film = intent.getParcelableExtra(EXTRA_FILM)!!
 		
 		binding.model = DetailViewModel(film)
 		

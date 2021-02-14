@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.3.72'
-    ext.butterknife_version = '8.8.1'
+    ext.butterknife_version = '10.2.3'
 
     repositories {
         google()
