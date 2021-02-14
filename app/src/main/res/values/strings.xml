@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">rgIntegrationSample</string>
+    <string name="form_title">Title</string>
+    <string name="form_release_date">Release date</string>
+    <string name="form_director">Director</string>
+    <string name="form_description">Description</string>
+</resources>
