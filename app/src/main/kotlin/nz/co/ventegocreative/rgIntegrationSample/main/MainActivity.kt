@@ -1,6 +1,7 @@
 package nz.co.ventegocreative.rgIntegrationSample.main
 
 import android.app.Activity
+import android.app.Application
 import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import butterknife.BindView
 import butterknife.ButterKnife
+import com.raygun.raygun4android.RaygunClient
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import nz.co.ventegocreative.rgIntegrationSample.R
@@ -51,8 +53,10 @@ class MainActivity : AppCompatActivity() {
 	}
 	
 	private fun fetchAndDisplayFilmsList() {
+		// Uncomment below to cause Division by Zero exception
+		// var i = 3/0
 		doAsync(exceptionHandler = { throwable: Throwable -> throwable.printStackTrace() }) {
-			
+
 			val localFilmsList = LocalData(this@MainActivity).getFilms()
 			val remoteFilmsList = FilmsRequest().send()
 			val combinedFilmsList = localFilmsList.plus(remoteFilmsList)
