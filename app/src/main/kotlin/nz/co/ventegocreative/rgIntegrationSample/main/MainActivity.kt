@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 	private fun fetchAndDisplayFilmsList() {
 		// Uncomment below to cause Division by Zero exception
 		// var i = 3/0
-		doAsync(exceptionHandler = { throwable: Throwable -> throwable.printStackTrace() }) {
+		doAsync(exceptionHandler = { throwable: Throwable -> RaygunClient.send(throwable) }) {
 
 			val localFilmsList = LocalData(this@MainActivity).getFilms()
 			val remoteFilmsList = FilmsRequest().send()
