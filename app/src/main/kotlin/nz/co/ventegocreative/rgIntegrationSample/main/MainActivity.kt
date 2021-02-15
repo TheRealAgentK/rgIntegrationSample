@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		
+
+		RaygunClient.init(applicationContext as Application);
+		RaygunClient.enableCrashReporting();
+
 		setContentView(R.layout.activity_main)
 		
 		ButterKnife.bind(this)
